@@ -59,7 +59,7 @@ const addNewListaUsuarios = () => {
 
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-if(usuarios.length > 0) addNewListaUsuarios();
+usuarios.length > 0 && addNewListaUsuarios(); //if(usuarios.length > 0) addNewListaUsuarios();
 
 /**
  * Resetear inputs

@@ -59,7 +59,7 @@ const addNewGrupo = () => {
 }
 let grupos = JSON.parse(localStorage.getItem("grupos")) || [];
 
-if(grupos.length > 0) addNewGrupo();
+grupos.length > 0 && addNewGrupo(); //if(grupos.length > 0) addNewGrupo();
 
 /**
  * Resetear inputs
@@ -208,6 +208,5 @@ const addDoc2 = () => {
         opcionDoc2.appendChild(option);
     });
 }
-
-if(usuarios.length > 0) addDoc();
-if(usuarios.length > 0) addDoc2();
+usuarios.length > 0 && addDoc();// if(usuarios.length > 0) addDoc();
+usuarios.length > 0 && addDoc2();//if(usuarios.length > 0) addDoc2();

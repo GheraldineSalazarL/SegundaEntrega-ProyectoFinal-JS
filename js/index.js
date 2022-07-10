@@ -24,17 +24,19 @@
     let totalEstList = getTotalES();
     let totalReportList = getTotalReport(); */
 
-    if(totalUsList===0){
-        totalUser.innerHTML = 0;
-    }else{
-        totalUser.innerHTML = localStorage.getItem('totalUser');
-    }
-    
-    if(totalGrupList===0){
-        totalGrup.innerHTML = 0;
-    }else{
-        totalGrup.innerHTML = localStorage.getItem('totalGrup');
-    }
+    totalUsList===0 ? totalUser.innerHTML = 0 : totalUser.innerHTML = localStorage.getItem('totalUser'); 
+            // if(totalUsList===0){
+            //     totalUser.innerHTML = 0;
+            // }else{
+            //     totalUser.innerHTML = localStorage.getItem('totalUser');
+            // }
+        
+    totalGrupList===0 ? totalGrup.innerHTML = 0 : totalGrup.innerHTML = localStorage.getItem('totalGrup'); 
+            // if(totalGrupList===0){
+            //     totalGrup.innerHTML = 0;
+            // }else{
+            //     totalGrup.innerHTML = localStorage.getItem('totalGrup');
+            // }
    
 }
 
