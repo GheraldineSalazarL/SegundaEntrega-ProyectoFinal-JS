@@ -52,7 +52,6 @@ const addNewListaUsuarios = () => {
                             </a>
                         </td>`;
                         
-        
         tablaUs.appendChild(tr);
     });
 }
@@ -99,17 +98,31 @@ const addUs = () =>{
         let nuevoUsuario = new listaUsuarios(usuario,nombre,cel,direccion,rol,pass);
         usuarios.push(nuevoUsuario);
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-        avisoNuevoUs.innerHTML = "Nuevo usuario registrado con éxito";
-        setTimeout(() => {avisoNuevoUs.innerHTML = ""}, 3000);
+        
+        resetInputs();
+        // avisoNuevoUs.innerHTML = "Nuevo usuario registrado con éxito";
+        // setTimeout(() => {avisoNuevoUs.innerHTML = ""}, 3000);
+        Swal.fire({
+            title: 'Bien hecho!',
+            text: 'Nuevo usuario registrado con éxito',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2500,
+        });
         addNewListaUsuarios();
         addDoc();
-        resetInputs();
         inicialize();
     }else{
-        avisoNuevoUs.innerHTML = "Debe completar los campos de usuario, nombre, rol y password obligatoriamente";
-        setTimeout(() => {avisoNuevoUs.innerHTML = ""}, 3000);
+        // avisoNuevoUs.innerHTML = "Debe completar los campos de usuario, nombre, rol y password obligatoriamente";
+        // setTimeout(() => {avisoNuevoUs.innerHTML = ""}, 3000);
         resetInputs();
+        Swal.fire({
+            title: 'Error',
+            text: 'Debe completar los campos de usuario, nombre, rol y password obligatoriamente',
+            icon: 'error',
+            showConfirmButton: false,
+            timer: 3000
+        });
     }
     
 }
@@ -122,9 +135,16 @@ btnNuevoUs.onclick = (e) =>{
     let usuario=inputUs.value;
     const buscado = usuarios.find(usuarioBus=>usuarioBus.usuario===usuario);
     if (buscado){
-        avisoNuevoUs.innerHTML = "El usuario ya existe";
-        setTimeout(() => {avisoNuevoUs.innerHTML = ""}, 3000);
+        // avisoNuevoUs.innerHTML = "El usuario ya existe";
+        // setTimeout(() => {avisoNuevoUs.innerHTML = ""}, 3000);
         resetInputs();
+        Swal.fire({
+            title: 'Alerta',
+            text: 'El usuario ya existe',
+            icon: 'warning',
+            showConfirmButton: false,
+            timer: 2000
+        });
     } else{
         addUs();
     } 
@@ -148,14 +168,27 @@ btnModificarUs.onclick = (e) =>{
         if(rol !== "Seleccione" && rol !== ''){buscado.rol = rol;}
         if(pass !== ''){buscado.pass = pass;}
         localStorage.setItem("usuarios",JSON.stringify(usuarios));
-        addNewListaUsuarios()
-        avisoNuevoUs.innerHTML = "Usuario modificado con éxito";
-        setTimeout(() => {avisoNuevoUs.innerHTML = ""}, 3000);
+        addNewListaUsuarios();
+        // avisoNuevoUs.innerHTML = "Usuario modificado con éxito";
+        // setTimeout(() => {avisoNuevoUs.innerHTML = ""}, 3000);
         resetInputs();
+        Swal.fire({
+            title: 'Bien hecho!',
+            text: 'Usuario modificado con éxito',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2500
+        });
     } else {
-        avisoNuevoUs.innerHTML = "El usuario no existe";
-        setTimeout(() => {avisoNuevoUs.innerHTML = ""}, 3000);
-        resetInputs();
+        // avisoNuevoUs.innerHTML = "El usuario no existe";
+        // setTimeout(() => {avisoNuevoUs.innerHTML = ""}, 3000);
+        Swal.fire({
+            title: 'Eror',
+            text: 'El usuario no existe',
+            icon: 'error',
+            showConfirmButton: false,
+            timer: 2000
+        });
     }
 }
 

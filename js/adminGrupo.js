@@ -94,15 +94,29 @@ const addGrup = () =>{
         let nuevoGrupo = new listaGrupos(codGrupo,nombreGrupo, docGrupo, numeroEstudiantes);
         grupos.push(nuevoGrupo);
         localStorage.setItem("grupos", JSON.stringify(grupos));
-        avisoNuevoGrup.innerHTML = "Nuevo grupo registrado con éxito";
-        setTimeout(() => {avisoNuevoGrup.innerHTML = ""}, 3000);
+        resetInputsgrup();
+        // avisoNuevoGrup.innerHTML = "Nuevo grupo registrado con éxito";
+        // setTimeout(() => {avisoNuevoGrup.innerHTML = ""}, 3000);
+        Swal.fire({
+            title: 'Bien hecho!',
+            text: 'Nuevo grupo registrado con éxito',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2000
+        });
         addNewGrupo();
-        resetInputsgrup();
-        //inicialize();
+        inicialize();
     }else{
-        avisoNuevoGrup.innerHTML = "Debe completar todos los campos";
-        setTimeout(() => {avisoNuevoGrup.innerHTML = ""}, 3000);
+        // avisoNuevoGrup.innerHTML = "Debe completar todos los campos";
+        // setTimeout(() => {avisoNuevoGrup.innerHTML = ""}, 3000);
         resetInputsgrup();
+        Swal.fire({
+            title: 'Error!',
+            text: 'Debe completar todos los campos',
+            icon: 'error',
+            showConfirmButton: false,
+            timer: 2000
+        });
     }
 }
 
@@ -136,9 +150,16 @@ btnCrearGrup.onclick = (e) =>{
     let codGrupo=inputCodGrup.value;
     const buscadog = grupos.find(grupoBus=>grupoBus.codGrupo===codGrupo);
     if (buscadog){
-        avisoNuevoGrup.innerHTML = "El grupo ya existe";
-        setTimeout(() => {avisoNuevoUs.innerHTML = ""}, 3000);
+        // avisoNuevoGrup.innerHTML = "El grupo ya existe";
+        // setTimeout(() => {avisoNuevoUs.innerHTML = ""}, 3000);
         resetInputsgrup();
+        Swal.fire({
+            title: 'Alerta!',
+            text: 'El grupo ya existe',
+            icon: 'warning',
+            showConfirmButton: false,
+            timer: 2000
+        });
     } else{
         addGrup();
     } 
@@ -153,21 +174,33 @@ btnModificarGrup.onclick = (e) =>{
     let codGrupo=inputCodGrupE.value;
     let nombreGrupo=inputNombreGrupE.value;
     let docGrupo=opcionDoc2.value;
-    console.log(codGrupo);
     const buscadoGrup= grupos.find(grupoBus=>grupoBus.codGrupo===codGrupo);
-    console.log(buscadoGrup);
     if (buscadoGrup){
         if(nombreGrupo !== ''){buscadoGrup.nombreGrupo = nombreGrupo;}
         if(docGrupo !== "Seleccione" && docGrupo !== ''){buscadoGrup.docGrupo = docGrupo;}
         localStorage.setItem("grupos",JSON.stringify(grupos));
-        addNewGrupo()
-        avisoNuevoGrupE.innerHTML = "Grupo editado con éxito";
-        setTimeout(() => {avisoNuevoGrup.innerHTML = ""}, 3000);
+        // avisoNuevoGrupE.innerHTML = "Grupo editado con éxito";
+        // setTimeout(() => {avisoNuevoGrup.innerHTML = ""}, 3000);
         resetInputsgrup();
+        Swal.fire({
+            title: 'Bien hecho!',
+            text: 'Grupo editado con éxito',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2000
+        });
+        addNewGrupo();
+
     } else {
-        avisoNuevoGrupE.innerHTML = "El grupo no existe";
-        setTimeout(() => {avisoNuevoGrup.innerHTML = ""}, 3000);
-        resetInputsgrup();
+        // avisoNuevoGrupE.innerHTML = "El grupo no existe";
+        // setTimeout(() => {avisoNuevoGrup.innerHTML = ""}, 3000);
+        Swal.fire({
+            title: 'Error!',
+            text: 'El grupo no existe',
+            icon: 'error',
+            showConfirmButton: false,
+            timer: 2000
+        });
     }
 }
 
