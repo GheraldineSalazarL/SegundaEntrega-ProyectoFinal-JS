@@ -45,7 +45,7 @@
                 Admin
             </div>
 
-            <li class="nav-item active">
+            <li class="nav-item ">
                 <a class="nav-link" href="adminUsuario.html">
                     <i class="fa-solid fa-user"></i>
                     <span>Administrar Usuarios</span></a>
@@ -53,11 +53,11 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="adminGrupo.html">
-                    <i class="fas fa-fw fa-wrench"></i>
+                    <i class=" fas fa-fw fa-wrench"></i>
                     <span>Administrar Grupos</span></a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fa-solid fa-pen"></i>
@@ -133,9 +133,9 @@
         </ul>
         <!-- End of Sidebar -->
 
-        
+        <!-- Contenido -->
         <div id="content-wrapper" class="d-flex flex-column">
-                <!-- Barra de navegacion -->
+
             <div id="content">
 
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -205,93 +205,35 @@
 
                 </nav>
 
-<!---------------------------Contenido ---------------------------->
-                <div class="container-fluid">
-
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Administrar Usuarios</h1>
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-xl-12 col-lg-12">
-                            <div class="card shadow mb-4">
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Crear o Modificar Usuario</h6>
-                                </div>
-                                <div class="card-body">
-                                    <form class="col-md-8 m-auto">
-                                        Usuario: <input id="inputUs" type="text" class="form-control" required>
-                                        Nombre: <input id="inputNombreUs" type="text" class="form-control" >
-                                        Celular: <input id="inputCelUs" type="cel" class="form-control">
-                                        Dirección: <input id="inputDireccionUs" type="text" class="form-control">
-                                        Rol: 
-                                        <select class="form-control" id="inputRolUs" >
-                                            <option selected>Seleccione</option>
-                                            <option value="Administrador">Administrador</option>
-                                            <option value="Docente">Docente</option>
-                                            <option value="Asesor">Asesor</option>
-                                        </select>
-
-                                        Password: <input id="inputPassUs" type="password" class="form-control" >
-
-                                        <button type="submit" id="btnNuevoUs" class="btn btn-success btn-icon-split mt-2">
-                                            <span class="icon text-white-50">
-                                                <i class="fas fa-check"></i>
-                                            </span>
-                                            <span class="text">Nuevo Usuario</span>
-                                        </button>
-
-                                        <button type="submit" id="btnModificarUs" class="btn btn-info btn-icon-split mt-2">
-                                            <span class="icon text-white-50">
-                                                <i class="fa-solid fa-pen"></i>
-                                            </span>
-                                            <span class="text">Modificar Usuario</span>
-                                        </button>
-                                        <p>*Si desea modificar un dato de un usuario, ingrese el usuario (ya existente) y en los siguientes campos ingrese los valores que desea cambiar.</p>
-                                        <div id="avisoNuevoUs" class="fs-4 text-success mt-2">
-
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                <!-- Comienzo Contenido -->
+                <div class="col-xl-12 col-lg-12">
+                    <div class="card shadow mb-4">
+                        <div
+                            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Grupo 1</h6>
                         </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th class="table-secondary" scope="col">#</th>
+                                    <th class="table-secondary" scope="col">Nombre</th>
+                                    <th class="table-secondary" scope="col">Apellido</th>
+                                    <th class="table-secondary" scope="col">email</th>
+                                    <th class="table-secondary" scope="col">Genero</th>
+                                    <th class="table-secondary" scope="col"></th>
+                                  </tr>
+                                </thead>
+                                <tbody id="tablaEst">
 
-                        <div class="col-xl-12 col-lg-12">
-                            <div class="card shadow mb-4">
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Lista de Usuarios</h6>
-                                </div>
-                                <div class="card-body">
-                                    <table class="table">
-                                        <thead>
-                                          <tr>
-                                            <th class="table-secondary" scope="col">#</th>
-                                            <th class="table-secondary" scope="col">Usuario</th>
-                                            <th class="table-secondary" scope="col">Nombre</th>
-                                            <th class="table-secondary" scope="col">Celular</th>
-                                            <th class="table-secondary" scope="col">Dirección</th>
-                                            <th class="table-secondary" scope="col">Rol</th>
-                                            <th class="table-secondary" scope="col">Grupos</th>
-                                            <th class="table-secondary" scope="col"></th>
-                                          </tr>
-                                        </thead>
-                                        <tbody id="tablaUs">
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
-
                     </div>
-
                 </div>
 
-            </div>
-<!-------------------------------------------------------------------------------------->
+                <!-- -------------------- -->
+
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -328,24 +270,18 @@
             </div>
         </div>
     </div>
-    <script src="js/adminUsuario.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/adminGrupo.js"></script>
 
-    
+    <!-- <script src="js/adminUsuario.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/adminGrupo.js"></script> -->
+    <script src="js/grupo1.js"></script>
 
 
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/sb-admin-2.min.js"></script>
-    <script src="js/index.js"></script>
-
-   
-
-
-
-
+    
 </body>
 
 </html>
